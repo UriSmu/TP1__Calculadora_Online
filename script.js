@@ -59,3 +59,14 @@ function Resolver()
     num2 = '';
     num1 = resultado.toString();
 }
+
+function Borrar()
+{
+    num1 = '';
+    boolOpero = false;
+    num2 = '';
+    resultado = 0;
+    operacion = '';
+
+    display.innerText = '';
+}
