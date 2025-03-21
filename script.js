@@ -21,7 +21,7 @@ function Numero(num)
 
 function Operar(tipoOperacion)
 {
-    display.innerText = `${num1} ${operacion}`;
+    
     if(boolOpero === false)
     {
         operacion = tipoOperacion;
@@ -32,6 +32,7 @@ function Operar(tipoOperacion)
         Resolver();
         operacion = tipoOperacion;
     }
+    display.innerText = `${num1} ${operacion}`;
 }
 
 function Resolver()
