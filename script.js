@@ -4,6 +4,14 @@ let num2 = '';
 let resultado = 0;
 let operacion = '';
 let display = document.getElementById("display");
+const botonSuma = document.getElementById("suma");
+const botonResta = document.getElementById("resta");
+const botonMulti = document.getElementById("multiplicacion");
+const botonDivision = document.getElementById("division");
+const botonPorcentaje = document.getElementById("porcentaje");
+const botonSigno = document.getElementById("signo");
+const botonIgual = document.getElementById("igual");
+const botonComa = document.getElementById("coma");
 
 function Numero(num)
 {
@@ -11,12 +19,12 @@ function Numero(num)
     {
         if(num1 === '')
         {
-            document.getElementById("suma").removeAttribute('disabled');
-            document.getElementById("resta").removeAttribute('disabled');
-            document.getElementById("multiplicacion").removeAttribute('disabled');
-            document.getElementById("division").removeAttribute('disabled');
-            document.getElementById("porcentaje").removeAttribute('disabled');
-            document.getElementById("signo").setAttribute('disabled', true);
+            botonSuma.removeAttribute('disabled');
+            botonResta.removeAttribute('disabled');
+            botonMulti.removeAttribute('disabled');
+            botonDivision.removeAttribute('disabled');
+            botonPorcentaje.removeAttribute('disabled');
+            botonSigno.setAttribute('disabled', true);
         }
 
         num1+=num;
@@ -26,8 +34,9 @@ function Numero(num)
     {
         if(num2 === '')
         {
-            document.getElementById("igual").removeAttribute('disabled');
-            document.getElementById("signo").setAttribute('disabled', true);
+            display.style.color = "white";
+            botonIgual.removeAttribute('disabled');
+            botonSigno.setAttribute('disabled', true);
         }
 
         num2+=num;
@@ -36,7 +45,7 @@ function Numero(num)
 
     if(num === '.')
     {
-        document.getElementById("coma").setAttribute('disabled', true);
+        botonComa.setAttribute('disabled', true);
     }
 }
 
@@ -53,8 +62,9 @@ function Operar(tipoOperacion)
     }
     operacion = tipoOperacion;  
     display.innerText = `${num1} ${operacion}`;
-    document.getElementById("signo").removeAttribute('disabled');
-    document.getElementById("coma").removeAttribute('disabled');
+    botonSigno.removeAttribute('disabled');
+    botonComa.removeAttribute('disabled');
+    display.style.color = "white";
 }
 
 function Resolver()
@@ -81,10 +91,15 @@ function Resolver()
     }
 
     display.innerText = resultado;
+    if (resultado > 0) {
+        display.style.color = "green";
+    } else {
+        display.style.color = "red";
+    }
 
     num2 = '';
     num1 = resultado.toString();
-    document.getElementById("igual").setAttribute('disabled', true);
+    botonIgual.setAttribute('disabled', true);
 }
 
 function Borrar()
@@ -94,13 +109,14 @@ function Borrar()
     num2 = '';
     resultado = 0;
     operacion = '';
-    document.getElementById("suma").setAttribute('disabled' ,true);
-    document.getElementById("resta").setAttribute('disabled' ,true);
-    document.getElementById("multiplicacion").setAttribute('disabled' ,true);
-    document.getElementById("division").setAttribute('disabled' ,true);
-    document.getElementById("porcentaje").setAttribute('disabled' ,true);
-    document.getElementById("signo").removeAttribute('disabled');
-    document.getElementById("coma").removeAttribute('disabled');
+    display.style.color = "white";
+    botonSuma.setAttribute('disabled' ,true);
+    botonResta.setAttribute('disabled' ,true);
+    botonMulti.setAttribute('disabled' ,true);
+    botonDivision.setAttribute('disabled' ,true);
+    botonPorcentaje.setAttribute('disabled' ,true);
+    botonSigno.removeAttribute('disabled');
+    botonComa.removeAttribute('disabled');
 
     display.innerText = '';
 }
