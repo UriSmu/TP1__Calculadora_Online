@@ -9,7 +9,6 @@ body {
     background-color: #f4f4f4;
 }
 
-/* Display */
 #display {
     font-size: 36px;
     text-align: right;
@@ -23,7 +22,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Contenedor de los botones */
 #calculator {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -33,7 +31,6 @@ body {
     justify-items: center;
 }
 
-/* Estilo para los botones */
 button {
     width: 60px;
     height: 60px;
@@ -58,7 +55,6 @@ button:active {
     background-color: #ccc;
 }
 
-/* Estilo para los botones de número */
 .number {
     background-color: #f7f7f7;
     color: #333;
@@ -68,7 +64,6 @@ button:active {
     background-color: #e0e0e0;
 }
 
-/* Estilo para los botones de operación */
 .operation {
     background-color: #ff8c00;
     color: white;
@@ -82,7 +77,6 @@ button:active {
     background-color: #cc6c00;
 }
 
-/* Estilo del botón "AC" */
 #borrar {
     background-color: #e74c3c;
     color: white;
@@ -98,4 +92,12 @@ button:active {
 
 button:focus {
     outline: none;
+}
+
+.oculto{
+    background-color: #f4f4f4;
+}
+
+.oculto:hover{
+    background-color: #f4f4f4;
 }

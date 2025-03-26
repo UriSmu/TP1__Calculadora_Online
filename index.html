@@ -10,23 +10,30 @@
     <p id="display"></p>
     <div id="calculator">
         <button class="operation" id="borrar" onclick="Borrar()"><p>AC</p></button>
+        <button class="operation" id="signo" onclick="Numero('-')"><p>(+/-)</p></button>
+        <button class="operation" id="porcentaje" onclick="Operar('%')" disabled><p>%</p></button>
+        <button class="operation" id="division" onclick="Operar('/')" disabled><p>/</p></button>
+
         <button class="number" id="7" onclick="Numero(7)"><p>7</p></button>
         <button class="number" id="8" onclick="Numero(8)"><p>8</p></button>
         <button class="number" id="9" onclick="Numero(9)"><p>9</p></button>
+        <button class="operation" id="multiplicacion" onclick="Operar('*')" disabled><p>x</p></button>
         
-        <button class="operation" id="division" onclick="Operar('/')" disabled><p>/</p></button>
+        
         <button class="number" id="4" onclick="Numero(4)"><p>4</p></button>
         <button class="number" id="5" onclick="Numero(5)"><p>5</p></button>
         <button class="number" id="6" onclick="Numero(6)"><p>6</p></button>
+        <button class="operation" id="resta" onclick="Operar('-')" disabled><p>-</p></button>
         
-        <button class="operation" id="multiplicacion" onclick="Operar('*')" disabled><p>x</p></button>
+        
         <button class="number" id="1" onclick="Numero(1)"><p>1</p></button>
         <button class="number" id="2" onclick="Numero(2)"><p>2</p></button>
         <button class="number" id="3" onclick="Numero(3)"><p>3</p></button>
-        
         <button class="operation" id="suma" onclick="Operar('+')" disabled><p>+</p></button>
-        <button class="operation" id="resta" onclick="Operar('-')" disabled><p>-</p></button>
+        
+        <button class="oculto" disabled></button>
         <button class="number" id="0" onclick="Numero(0)"><p>0</p></button>
+        <button class="operation" id="coma" onclick="Numero('.')"><p>,</p></button>
         <button class="operation" id="igual" onclick="Resolver()" disabled><p>=</p></button>
     </div>
 

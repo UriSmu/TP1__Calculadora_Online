@@ -15,6 +15,8 @@ function Numero(num)
             document.getElementById("resta").removeAttribute('disabled');
             document.getElementById("multiplicacion").removeAttribute('disabled');
             document.getElementById("division").removeAttribute('disabled');
+            document.getElementById("porcentaje").removeAttribute('disabled');
+            document.getElementById("signo").setAttribute('disabled', true);
         }
 
         num1+=num;
@@ -25,10 +27,16 @@ function Numero(num)
         if(num2 === '')
         {
             document.getElementById("igual").removeAttribute('disabled');
+            document.getElementById("signo").setAttribute('disabled', true);
         }
 
         num2+=num;
         display.innerText = `${num1} ${operacion} ${num2}`;
+    }
+
+    if(num === '.')
+    {
+        document.getElementById("coma").setAttribute('disabled', true);
     }
 }
 
@@ -45,6 +53,8 @@ function Operar(tipoOperacion)
     }
     operacion = tipoOperacion;  
     display.innerText = `${num1} ${operacion}`;
+    document.getElementById("signo").removeAttribute('disabled');
+    document.getElementById("coma").removeAttribute('disabled');
 }
 
 function Resolver()
@@ -65,6 +75,10 @@ function Resolver()
     {
         resultado = parseFloat(num1) * parseFloat(num2);
     }
+    else if(operacion === '%')
+    {
+        resultado = (parseFloat(num1) / 100) * parseFloat(num2)
+    }
 
     display.innerText = resultado;
 
@@ -80,6 +94,13 @@ function Borrar()
     num2 = '';
     resultado = 0;
     operacion = '';
+    document.getElementById("suma").setAttribute('disabled' ,true);
+    document.getElementById("resta").setAttribute('disabled' ,true);
+    document.getElementById("multiplicacion").setAttribute('disabled' ,true);
+    document.getElementById("division").setAttribute('disabled' ,true);
+    document.getElementById("porcentaje").setAttribute('disabled' ,true);
+    document.getElementById("signo").removeAttribute('disabled');
+    document.getElementById("coma").removeAttribute('disabled');
 
     display.innerText = '';
 }
